@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fittrack</title>
+        <link rel="stylesheet" href="styles.css">  
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />   
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+        <link rel="stylesheet"
+        href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+    </head>
+<body>
+    <!--Nav Bar-->
+    <header>
+        <a href="#" class="logo"><i class="ri-home-heart-fill"></i><span>Fittrack</span>
+        </a>
+
+        <ul class="navbar">
+            <li><a href="b1.html" >Home</a></li>
+            <li><a href="BMI.html"class="active">BMI</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+
+        <div class="main">
+            <a href="#" class="user"><i class="ri-user-fill"></i>Sign In</a>
+            <a href="#">Register</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+    <!--js link-->
+    <script type="text/javascript" src="script.js"></script>
+    
+    <!-- Box info -->
+    <div class="tit">Theo dõi BMI</div>
+    <div class="boxinfo">
+        <div class="age-s" style="display: flex;">
+            <div class="age">
+                <div>Tuổi</div>
+                <input class="bmiinput" type="number" id="age" oninput="checkInputNumber(this)">
+            </div>
+            <div class="age">
+                <div>Giới tính (nam/nu)</div>
+                <input class="bmiinput" id="gt">
+            </div>
+        </div>
+        <div class="age-s" style="margin-top: 10%">
+            <div class="age">
+                <div>Chiều cao (cm)</div>
+                <input class="bmiinput" type="number" id="height" oninput="checkInputNumber(this)">
+            </div>
+            <div class="age">
+                <div>Cân nặng (kg)</div>
+                <input class="bmiinput" type="number" id="weight" oninput="checkInputNumber(this)">
+            </div>  
+        </div>
+        <div class="letcal" onclick="tinhBMI()"> <a href="#showbmisection">Tính</a></div>
+    </div>
+
+    <!-- Box show -->
+    <section id="showbmisection"></section>
+    <div class="boxbmi">
+        <div class="ketqua">
+            <div>Kết quả BMI của bạn là: </div>
+            <div id="showbmi">0</div>
+        </div>
+        <div class="binhluan">
+            <div>Chỉ số cho thấy bạn: </div>
+            <div id="comment">...</div>
+        </div>
+        <!-- Duy trì -->
+        <div class="boxtt">
+            <div class="boxttcon">
+                <div class="tt">Duy trì</div>
+                <div class="ttso" id="Dt">... calories/ngày</div>
+            </div>
+        </div>
+        <!-- Giảm cân nhẹ + Tăng cân nhẹ -->
+        <div class="boxtt">
+            <div class="boxttcon">
+                <div class="tt">Giảm cân nhẹ</div>
+                <div class="ttso" id="Gn">... calories/ngày</div>
+            </div>
+            <div class="boxttcon">
+                <div class="tt">Tăng cân nhẹ</div>
+                <div class="ttso" id="Tn">... calories/ngày</div>
+            </div>
+        </div>
+        <!-- Giảm cân + Tăng cân -->
+        <div class="boxtt">
+            <div class="boxttcon">
+                <div class="tt">Giảm cân</div>
+                <div class="ttso" id="G">... calories/ngày</div>
+            </div>
+            <div class="boxttcon">
+                <div class="tt">Tăng cân</div>
+                <div class="ttso" id="T">... calories/ngày</div>
+            </div>
+        </div>
+        <!-- Giảm cân nhanh + Tăng cân nhanh -->
+        <div class="boxtt">
+            <div class="boxttcon">
+                <div class="tt">Giảm cân nhanh</div>
+                <div class="ttso" id="GN">... calories/ngày</div>
+            </div>
+            <div class="boxttcon">
+                <div class="tt">Tăng cân nhanh</div>
+                <div class="ttso" id="TN">... calories/ngày</div>
+            </div>
+        </div>
+    </div>
+    <div class="ending">.</div>
+</body>
+</html>
