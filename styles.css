@@ -65,7 +65,7 @@ header{
     color: var(--main-color);
 }
 .main{
-    display: flex;
+    display: none;
     align-items: center;
 }
 .main a{
