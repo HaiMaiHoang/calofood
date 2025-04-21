@@ -47,14 +47,21 @@
                 <input id="searchInput" class="search-input" type="text" placeholder="Search">
                 </div>
             <ul id="itemList" class="block-the-list">
-                    <li class="ls" onclick="addToCalories(this, 'Chicken')">Chicken</li>
+                    <li class="ls" onclick="addToCalories(this, 'Indomie')">Mì indomie</li>
+                    <li class="ls" onclick="addToCalories(this, 'Comtrang')">Cơm trắng</li>
+                    <li class="ls" onclick="addToCalories(this, 'Ucgaac')">Ức gà áp chảo</li>
                     <li class="ls" onclick="addToCalories(this, 'Tiger')">Tiger1</li>
+                    <li class="ls" onclick="addToCalories(this, 'Kingcoffee')">Gói KingCoffee</li>          
                     <li class="ls" onclick="addToCalories(this, 'Banhbaochay')">Bánh bao chay</li>
-                    <li class="ls" onclick="addToCalories(this, 'Banhbaocade')">Bánh bao nhân cade</li>
-                    <li class="ls">AaaaaaA</li>
-                    <li class="ls">BB</li>
-                    <li class="ls">MMB</li>
-                    <li class="ls">AaaaaaA</li>
+                    <li class="ls" onclick="addToCalories(this, 'Ucgal')">Ức gà luộc</li>
+                    <li class="ls" onclick="addToCalories(this, 'Bunbohue')">Bún bò huế</li>
+                    <li class="ls" onclick="addToCalories(this, 'Bunbohuegio')">Bún bò huế (giò)</li>
+                    <li class="ls" onclick="addToCalories(this, 'Bunrieucua')">Bún riêu cua</li>
+                    <li class="ls" onclick="addToCalories(this, 'Nuocngotgaz')">Nước ngọt có gaz</li>
+                    <li class="ls" onclick="addToCalories(this, 'Raumuong')">Rau muống</li>
+                    <li class="ls" onclick="addToCalories(this, 'Trungluoc')">Trứng luộc</li>
+                    <li class="ls" onclick="addToCalories(this, 'Trungran')">Trứng rán</li>
+                    <li class="ls" onclick="addToCalories(this, 'Tranchau')">Trân châu</li>
             </ul>
         </div>
             
@@ -101,7 +108,7 @@
             </div>
         </div>
     </div>
-
+    <!--  js cho search-input  -->
     <script>
         // CHÚ THÍCH SẼ LÀ CHÚ THÍCH CHO DÒNG BÊN DƯỚI
         const input = document.getElementById('searchInput');
@@ -115,11 +122,9 @@
             // kiểm tra từng phần tử trong mảng
             for (let i = 0; i < items.length; i++) {
                 const txt = items[i].textContent.toLowerCase();
-                if (filter === '')
-                    items[i].style.display = 'none';
                 /* nếu phần tử trong mảng chứa từ đang nhập
             ở search-input thì hiển thị*/
-                else if(txt.includes(filter)) 
+                if(txt.includes(filter)) 
                     items[i].style.display = 'block'; 
                 else
                     items[i].style.display = 'none'; 

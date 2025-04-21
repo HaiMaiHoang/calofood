@@ -225,7 +225,7 @@ header{
         }
 
         .block-the-list::-webkit-scrollbar-thumb:hover{
-            background: #fff;
+            background: var(--main-color);
             border-radius: 10px;
         }
 
@@ -240,6 +240,10 @@ header{
             border-radius: 15px;
             margin-bottom: 10px;
         }
+            .ls:hover{
+                cursor: pointer;
+                color: var(--main-color);
+            }
 
     .calories-container {
         width: 50%;

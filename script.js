@@ -7,13 +7,25 @@ menu.onclick = () => {
     navbar.classList.toggle('open');
 }
 
-// Food
+// Dữ liệu food search
 
 const foods = {
-    Chicken: { stt: 0, name: "Chicken", calo: 100, pro: 100, fat: 100, carb: 100, dv: "g" },
-    Beef: { stt: 1, name: "Beef", calo: 120, pro: 100, fat: 100, carb: 100, dv: "g" },
-    Tiger: { stt: 2, name: "Tiger", calo: 888, pro: 100, fat: 100, carb: 100, dv: "g"},
-    Banhbaochay: { stt: 3, name: "Bánh bao chay", calo: 110, pro: 5.5, fat: 5.3, carb: 16, dv: "c"}
+    Indomie: { stt: 0, name: "Mì indomie", calo:  432, pro: 9.6, fat: 19.3, carb: 55, dv: "c"},
+    Comtrang: { stt: 1, name: "Cơm trắng", calo:  130, pro: 2.4, fat: 0.3, carb: 28, dv: "g"},
+    Ucgaac: { stt: 2, name: "Ức gà áp chảo", calo: 255, pro: 31, fat: 10, carb: 0, dv: "g" },
+    Beef: { stt: 3, name: "Beef", calo: 120, pro: 100, fat: 100, carb: 100, dv: "g"},
+    Tiger: { stt: 4, name: "Tiger", calo: 170, pro: 28, fat: 60, carb: 100, dv: "g"},
+    Banhbaochay: { stt: 5, name: "Bánh bao chay", calo: 110, pro: 5.5, fat: 5.3, carb: 16, dv: "c"},
+    Ucgal:{ stt: 6, name: "Ức gà luộc", calo: 165, pro: 31, fat: 3.6, carb: 0, dv: "g"},
+    Kingcoffee:{ stt: 7, name: "Gói KingCoffee", calo: 65, pro: 0.3, carb: 11.1, fat: 2.2, dv: "c"},
+    Tranchau: { stt: 8, name: "Trân châu", calo: 347, pro: 9.5, fat: 0.2, carb: 55, dv: "g" },
+    Bunbohue:     { stt: 9,  name: "Bún bò huế",            calo: 478.8, pro: 18.4, fat: 16,   carb: 65.3, dv: "c" },
+    Bunbohuegio:  { stt:10,  name: "Bún bò huế (giò)",      calo: 621.8, pro: 30.2, fat: 30.6, carb: 56.4, dv: "c" },
+    Bunrieucua:   { stt:11,  name: "Bún riêu cua",          calo: 413,   pro: 17.8, fat: 12.2, carb: 58,   dv: "c" },
+    Nuocngotgaz:  { stt:12,  name: "Nước ngọt có gaz",      calo: 144.8, pro: 0,    fat: 0,    carb: 36.2, dv: "c" },
+    Raumuong:     { stt:13,  name: "Rau muống",             calo: 19,    pro: 2,    fat: 0.2,  carb: 3.1,  dv: "g" },
+    Trungluoc:    { stt:14,  name: "Trứng luộc",            calo: 75,    pro: 6.3,  fat: 5.3,  carb: 0.6,  dv: "c" },
+    Trungran:     { stt:15,  name: "Trứng rán",             calo: 91,    pro: 6.7,  fat: 7,    carb: 0.4,  dv: "c" }
 };
 
 let checkFoods = {};
@@ -38,7 +50,7 @@ function addToCalories(element, foodKey) {
   <div class="right-group">
       <input type="number" value="${value}" class="inputcalo" oninput="updatecalo(this, ${item.stt}, ${item.calo}, ${item.carb}, ${item.fat}, ${item.pro},  '${item.dv}')"> 
       <button class="remove-btn" onclick="removeItem(this)">
-       <i class="ri-close-circle-line"></i>     </button>
+      <i class="ri-close-circle-line"></i>     </button>
   </div>
   `;
   list.appendChild(li);
@@ -95,9 +107,9 @@ function showtotalcal(){
     }
   document.getElementById("total-calories").innerHTML = totalcal.toFixed(0) + " calories";
   document.getElementById("modal-calo").innerHTML = totalcal.toFixed(0) + " kcal";
-  document.getElementById("modal-carb").innerHTML = totalcarb.toFixed(0) + " g";
-  document.getElementById("modal-fat").innerHTML = totalfat.toFixed(0) + " g";
-  document.getElementById("modal-pro").innerHTML = totalpro.toFixed(0) + " g";
+  document.getElementById("modal-carb").innerHTML = totalcarb.toFixed(1) + " g";
+  document.getElementById("modal-fat").innerHTML = totalfat.toFixed(1) + " g";
+  document.getElementById("modal-pro").innerHTML = totalpro.toFixed(1) + " g";
 }
 
 //Pop up js 
@@ -159,3 +171,4 @@ function tinhBMI(){
   document.getElementById("GN").innerHTML=caloGN.toFixed(0) + " calories/day";
   document.getElementById("TN").innerHTML=caloTN.toFixed(0) + " calories/day";
 }
+
